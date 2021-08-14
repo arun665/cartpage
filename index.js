@@ -442,6 +442,38 @@ cartprod = (prods) => {
       
       
       </div>
+
+      <div className="wrapper"> 
+          <form method="POST" name="customerData" action="http://localhost:5000/ccavRequestHandler">
+            <input type="hidden" name="merchant_id" id="merchant_id" value="271474" />
+            <input type="hidden" name="order_id" value="SNORD1234" />
+            <input type="hidden" name="currency" value="INR" />
+            <input type="hidden" name="amount" value="1" />
+            <input type="hidden" name="redirect_url"
+              value="http://localhost:5000/ccavResponseHandler" />
+            <input type="hidden" name="cancel_url"
+              value="http://localhost:5000/ccavResponseHandler" />
+            <input type="hidden" name="language" id="language" value="EN" />
+            <input type="hidden" name="billing_name" value={this.state.user.username} />
+            <input type="hidden" name="billing_address"
+              value={this.state.street_addTitle} />
+            <input type="hidden" name="billing_city" value={this.state.cityTitle} />
+            <input type="hidden" name="billing_state" value="UP" />
+            <input type="hidden" name="billing_zip" value={this.state.pinTitle} />
+            <input type="hidden" name="billing_country" value="India" />
+            <input type="hidden" name="billing_tel" value={this.state.user.contact_no} />
+            <input type="hidden" name="billing_email" value={this.state.user.email} />
+            <input type="hidden" name="delivery_name" value="Sam" />
+            <input type="hidden" name="delivery_address"
+					value="Vile Parle" />
+          <input type="hidden" name="delivery_city" value="Mumbai" />
+          <input type="hidden" name="delivery_state" value="Maharashtra" />
+          <input type="hidden" name="delivery_zip" value={this.state.pinTitle} />
+          <input type="hidden" name="delivery_country" value="India" />
+          <input type="hidden" name="delivery_tel" value="0123456789" />
+            <input type="submit" value="Checkout" className="btn btn-success"/>
+          </form>
+        </div>
       
       <Footer/>
           </>
